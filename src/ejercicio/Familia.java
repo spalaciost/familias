@@ -1,28 +1,20 @@
 package ejercicio;
+import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Estudiante
- */
 public class Familia { 
     
+    
     private String apellido;
-    private Persona madre;
-    private Persona padre;
-    private Persona[] hijos;
+    private ArrayList<Persona> persona;
 
     public Familia(String apellido) {
         this.apellido = apellido;
-        this.hijos = new Persona[2];
+        this.persona = new ArrayList<Persona>();
     }
-    public Persona[] listar_miembro(){
-        return null;
+
+    public boolean Agregar_Miembro(Persona persona){
+        this.persona.add(persona);
+        return true;
     }
     public Persona buscar_miembro(String nombre){
         return null;
@@ -30,33 +22,16 @@ public class Familia {
     public String getApellido() {
         return apellido;
     }
-
-    public Persona getMadre() {
-        return madre;
-    }
-
-    public Persona getPadre() {
-        return padre;
-    }
-
-    public Persona[] getHijos() {
-        return hijos;
-    }
-
+    public void Listar_Miembros(){
+        /*for(Persona p: this.persona){
+            System.out.println(p);
+        }*/
+        for(int i=0; i<this.persona.size();i++){
+        Persona p = this.persona.get(i);
+            System.out.println(p);
+        }
+}
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-
-    public void setMadre(Persona madre) {
-        this.madre = madre;
     }
-
-    public void setPadre(Persona padre) {
-        this.padre = padre;
-    }
-
-    public void setHijos(Persona[] hijos) {
-        this.hijos = hijos;
-    }
-    
-}
