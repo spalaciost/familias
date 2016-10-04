@@ -16,9 +16,15 @@ public class Registro {
         this.Familia.add(familia);
         return true;
     }
-    public Familia consultar_familia(String apellido){
-    return null;
-    }  
+    public void consultar_familia(String apellido){
+        for (Familia familia : Familia) {
+            if(familia.getApellido().equals(apellido)){
+            familia.Listar_Miembros();
+            }
+            
+        }
+    }
+    
     public void ListarFamilia(){
         for (Familia familia : Familia) {
             System.out.println("------------");
