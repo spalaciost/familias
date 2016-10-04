@@ -1,30 +1,29 @@
 package ejercicio;
-
-
+import java.util.ArrayList;
 import ejercicio.Familia;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Estudiante
- */
-public class Registro {
-    private Familia[] familias;
+public class Registro { 
+    private ArrayList<Familia> Familia;
 
     public Registro() {
-        this.familias = new Familia[5];
+        this.Familia = new ArrayList<Familia>();
     }
-    public Persona consultar_persona(String n0ombre){
+    
+    public Persona consultar_persona(String nombre){
         return null;
     }
-    public void agregar_familia(Familia familia) {
+    public boolean agregar_familia(Familia familia) {
+        this.Familia.add(familia);
+        return true;
     }
     public Familia consultar_familia(String apellido){
     return null;
     }  
+    public void ListarFamilia(){
+        for (Familia familia : Familia) {
+            System.out.println("------------");
+            familia.Listar_Miembros();
+        }
+    }
+    
 }
